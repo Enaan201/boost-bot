@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boost Bot - Key Redemption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #2d2d2d;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            width: 400px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3d3d3d;
+            color: white;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #7289da;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #5b6eae;
+            transform: translateY(-2px);
+        }
+        .message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            animation: fadeIn 0.5s ease;
+        }
+        .error {
+            background-color: #ff44445b;
+            border: 1px solid #ff4444;
+            color: #ff9999;
+        }
+        .success {
+            background-color: #44ff445b;
+            border: 1px solid #44ff44;
+            color: #99ff99;
+        }
+        .loading {
+            background-color: #4444ff5b;
+            border: 1px solid #4444ff;
+            color: #9999ff;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Boost Bot - Key Redemption</h2>
+        <form action="/redeem" method="POST">
+            <div class="form-group">
+                <label for="key">Boost Key:</label>
+                <input type="text" id="key" name="key" required>
+            </div>
+            <div class="form-group">
+                <label for="invite">Server Invite:</label>
+                <input type="text" id="invite" name="invite" required>
+            </div>
+            <button type="submit">Redeem Key</button>
+        </form>
+        <div class="message error">
+            <i class="fas fa-times-circle"></i> Key or invite is invalid!
+        </div>
+
+                <div class="message success">
+            <i class="fas fa-check-circle"></i> Key redeemed successfully!
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+</body>
+</html>
